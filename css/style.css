@@ -1,0 +1,105 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding-top: 80px;
+}
+
+/*--Menu--*/
+.navbar-default {
+	background-color: #FFF;
+	border: none;
+}
+
+.navbar-brand img {
+	width: 250px;
+	padding: 0;
+}
+
+.navbar-nav {
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.nav>li {
+	height: 100%;
+}
+
+.navbar-nav>li>a {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	background-color: #88c354;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #88c354;
+}
+
+@media screen and (max-width: 767px) {
+	.navbar-nav {
+		height: auto;
+		display: block;
+	}
+}
+
+/*--Destaque--*/
+
+.carousel-inner .item img {
+	max-height: 600px;
+	width: 100%;
+}
+
+.carousel-caption h3 {
+	text-transform: uppercase;
+}
+
+.carousel-caption p {
+	font-size: 18px;
+}
+
+.btn-descer {
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	margin-left: -20px;
+	margin-top: -20px;
+}
+
+/*--Pesquisa--*/
+
+#pesquisa {
+	background-color: #f2f2f2;
+	padding:25px 0;
+}
+
+#pesquisa select {
+	width: 100%;
+}
+
+#pesquisa .form-group, #pesquisa .form-group div {
+	padding: 0;
+}
+
+#pesquisa h1 {
+	padding:0;
+	margin:0 0 15px 0;
+}
+
+#pesquisa .btn-search {
+	text-align: right;
+	padding:0;
+}
+
+@media screen and (max-width:767px) {
+	#pesquisa .btn-search button {
+		width: 100%;
+		text-align: center;
+	}
+}
