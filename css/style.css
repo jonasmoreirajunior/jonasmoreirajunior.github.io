@@ -70,6 +70,23 @@ body {
 	top: 100%;
 	margin-left: -20px;
 	margin-top: -20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #88c354;
+	border: none;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-descer:hover {
+	color:#000;
+}
+
+#destaque .btn-descer span {
+	margin-left: 2px;
 }
 
 /*--Pesquisa--*/
