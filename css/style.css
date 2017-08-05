@@ -114,9 +114,50 @@ body {
 	padding:0;
 }
 
+#pesquisa .btn-search button {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 @media screen and (max-width:767px) {
 	#pesquisa .btn-search button {
 		width: 100%;
 		text-align: center;
+	}
+}
+
+/*--Conteudo--*/
+
+.conteudo i {
+	font-size: 14px;
+}
+
+.conteudo ul {
+	list-style: none;
+}
+
+.conteudo ul li figure img {
+	width: 100%;
+}
+
+.conteudo ul li figure, .conteudo ul li article, .conteudo ul li {
+	padding: 0;
+}
+
+.conteudo ul li article {
+	padding-left: 5px;
+}
+
+.conteudo strong, .conteudo span {
+	display: block;
+}
+
+.conteudo .tipo {
+	text-transform:uppercase;
+}
+
+@media screen and (max-width: 767px) {
+	.conteudo ul li:last-child {
+		margin-top: 10px;
 	}
 }
