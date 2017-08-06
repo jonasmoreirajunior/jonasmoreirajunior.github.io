@@ -64,7 +64,7 @@ body {
 	font-size: 18px;
 }
 
-.btn-descer {
+#btn-descer {
 	position: absolute;
 	left: 50%;
 	top: 100%;
@@ -85,7 +85,7 @@ body {
 	color:#000;
 }
 
-#destaque .btn-descer span {
+#destaque #btn-descer span {
 	margin-left: 2px;
 }
 
@@ -128,12 +128,21 @@ body {
 
 /*--Conteudo--*/
 
+.conteudo {
+	margin: 30px 0;
+}
+
+.conteudo h3 {
+	margin: 0;
+}
+
 .conteudo i {
 	font-size: 14px;
 }
 
 .conteudo ul {
 	list-style: none;
+	margin-top: 10px;
 }
 
 .conteudo ul li figure img {
@@ -160,4 +169,19 @@ body {
 	.conteudo ul li:last-child {
 		margin-top: 10px;
 	}
+}
+
+/*--PUBLICIDADE--*/
+
+#publicidade {
+	margin: 30px 0;
+}
+
+#publicidade #public {
+	height: 160px;
+	color: #FFF;
+	background-color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
