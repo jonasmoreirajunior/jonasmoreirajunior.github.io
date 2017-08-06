@@ -47,6 +47,9 @@ body {
 		height: auto;
 		display: block;
 	}
+	.navbar {
+		margin-bottom: 0;
+	}
 }
 
 /*--Destaque--*/
