@@ -50,13 +50,13 @@ body {
 	.navbar {
 		margin-bottom: 0;
 	}
-	
+
 	body {
 		padding-top: 50px;
 	}
 }
 
-/*--Destaque--*/
+/*--Slide Topo--*/
 
 .carousel-inner .item img {
 	max-height: 600px;
@@ -133,47 +133,47 @@ body {
 	}
 }
 
-/*--Conteudo--*/
+/*--Ofertas Destaque--*/
 
-.conteudo {
+#destaques {
 	margin: 30px 0;
 }
 
-.conteudo h3 {
+#destaques h3 {
 	margin: 0;
 }
 
-.conteudo i {
+#destaques i {
 	font-size: 14px;
 }
 
-.conteudo ul {
+#destaques ul {
 	list-style: none;
 	margin-top: 10px;
 }
 
-.conteudo ul li figure img {
+#destaques ul li figure img {
 	width: 100%;
 }
 
-.conteudo ul li figure, .conteudo ul li article, .conteudo ul li {
+#destaques ul li figure, #destaques ul li article, #destaques ul li {
 	padding: 0;
 }
 
-.conteudo ul li article {
+#destaques ul li article {
 	padding-left: 5px;
 }
 
-.conteudo strong, .conteudo span {
+#destaques strong, #destaques span {
 	display: block;
 }
 
-.conteudo .tipo {
+#destaques .tipo {
 	text-transform:uppercase;
 }
 
 @media screen and (max-width: 767px) {
-	.conteudo ul li:last-child {
+	#destaques ul li:last-child {
 		margin-top: 10px;
 	}
 }
@@ -191,4 +191,52 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+/*-- Imoveis RECENTES index--*/
+
+#recentes ul {
+	list-style: none;
+}
+
+#recentes h3 {
+	margin: 0 0 30px 0;
+}
+
+#recentes ul li {
+	margin-bottom: 20px;
+}
+
+#recentes ul li .image {
+	width: 100%;
+	height: 230px;
+	background-image: url(../img/imoveis_recentes.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#recentes ul li figure .valor {
+	display: flex;
+	justify-content: center;
+	color: #FFF;
+	top:3px;
+	background-color: #88c354;
+	padding: 5px;
+}
+
+#recentes ul li figure .tipo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FFF;
+	background-color: #455167;
+}
+
+#recentes ul li .infos {
+	display: flex;
+	justify-content:space-around;
+	align-items: center;
+	background-color: #f2f2f2;
+	height: 35px;
 }
