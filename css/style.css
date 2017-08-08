@@ -214,6 +214,9 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
 }
 
 #recentes ul li figure .valor {
@@ -231,6 +234,7 @@ body {
 	justify-content: center;
 	color: #FFF;
 	background-color: #455167;
+	padding: 5px;
 }
 
 #recentes ul li .infos {
