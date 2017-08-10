@@ -56,6 +56,12 @@ body {
 	}
 }
 
+@media screen and (min-width: 768px) {
+	.navbar-right {
+		margin-right: 0;
+	}
+}
+
 /*--Slide Topo--*/
 
 .carousel-inner .item img {
@@ -180,11 +186,11 @@ body {
 
 /*--PUBLICIDADE--*/
 
-#publicidade {
+.publicidade {
 	margin: 30px 0;
 }
 
-#publicidade #public {
+.publicidade #public {
 	height: 160px;
 	color: #FFF;
 	background-color: #000;
@@ -243,4 +249,16 @@ body {
 	align-items: center;
 	background-color: #f2f2f2;
 	height: 35px;
+}
+
+/*--FOOTER--*/
+footer #empresa {
+	display: flex;
+	justify-content: center;
+}
+
+footer #empresa figure img {
+	max-width: 80%;
+	height: auto;
+	display: block;
 }
