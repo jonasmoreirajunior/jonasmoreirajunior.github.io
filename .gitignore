@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=wordpress
 
 #Node Modules
-/node_modules
+/.node_modules
 
 # Log files
 *.log
