@@ -258,6 +258,11 @@ nav.navbar {
 
 /*--Mobile--*/
 @media screen and (max-width: 576px) {
+	nav.navbar {
+		position: fixed;
+		background-color: #000 !important;
+	}
+
 	.header-content h1 {
 		font-size: 4rem;
 	}
