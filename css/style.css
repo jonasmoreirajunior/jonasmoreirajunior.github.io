@@ -265,4 +265,17 @@ nav.navbar {
 	.header-content h2 {
 		font-size: 1.5rem;
 	}
+
+	.skills-list {
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+
+	.skills-list .progress {
+		margin-bottom: 2rem;
+	}
+
+	.skills-list .progress:last-child {
+		margin-bottom: 0 !important;
+	}
 }
