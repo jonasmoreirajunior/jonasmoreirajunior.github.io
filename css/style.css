@@ -23,6 +23,14 @@ html {
 	z-index: 1;
 }
 
+.js .anime {
+	animation-play-state: paused !important;
+}
+
+.js .anime-init {
+	animation-play-state: running !important;
+}
+
 /*--Menu--*/
 nav.navbar {
 	position: absolute;

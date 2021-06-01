@@ -1,5 +1,34 @@
 $(function () {
 
+	var root = document.documentElement;
+	root.className += ' js';
+
+	function boxTop(idBox) {
+		var boxOffset = $(idBox).offset().top;
+		return boxOffset;
+	}
+
+	var $target = $('.anime'),
+		animationClass = 'anime-init',
+		windowHeight = $(window).height(),
+		offset = windowHeight - (windowHeight / 4);
+
+	function animeScroll() {
+		var documentTop = $(document).scrollTop();
+		$target.each(function () {
+			if (documentTop > boxTop(this) - offset) {
+				$(this).addClass(animationClass);
+			} else {
+				$(this).removeClass(animationClass);
+			}
+		});
+	}
+	animeScroll();
+
+	$(document).scroll(function () {
+		setTimeout(function () { animeScroll() }, 100);
+	});
+
 	var bounce = new Bounce();
 
 	bounce
@@ -10,19 +39,19 @@ $(function () {
 			stiffness: 4
 		})
 		.applyTo(document.querySelectorAll(".animation-target"));
-	
+
 	bounce
 		.skew({
-			from: { x: 0, y: 0},
-			to: { x: 40, y: 60},
+			from: { x: 0, y: 0 },
+			to: { x: 40, y: 60 },
 			easing: 'sway',
 			duration: 750,
 			bounces: 3,
 			stiffness: 3
 		})
 		.scale({
-			from: { x: 0, y: 0},
-			to: { x: 1, y: 1},
+			from: { x: 0, y: 0 },
+			to: { x: 1, y: 1 },
 			easing: 'bounce',
 			duration: 750,
 			bounces: 4,
