@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 
-*{
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -49,8 +49,8 @@ nav.navbar {
 }
 
 .navbar-toggler-icon {
-	color:#fff;
-	font-size:28px;
+	color: #fff;
+	font-size: 28px;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -96,7 +96,8 @@ nav.navbar {
 
 /*--Jobs--*/
 
-.jobs h2, .skills h2 {
+.jobs h2,
+.skills h2 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 2rem;
@@ -104,7 +105,8 @@ nav.navbar {
 	position: relative;
 }
 
-.jobs h2::after, .skills h2::after {
+.jobs h2::after,
+.skills h2::after {
 	content: '';
 	position: absolute;
 	width: 60px;
@@ -114,7 +116,7 @@ nav.navbar {
 	left: 0;
 }
 
-.jobs > .jobs-item > .job {
+.jobs>.jobs-item>.job {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -125,7 +127,7 @@ nav.navbar {
 	position: relative;
 }
 
-.jobs > .jobs-item > .job::after {
+.jobs>.jobs-item>.job::after {
 	content: '\f067';
 	font-family: FontAwesome;
 	font-size: 2rem;
@@ -144,40 +146,93 @@ nav.navbar {
 	transition: opacity .2s ease-in-out;
 }
 
-.jobs > .jobs-item > .job:hover::after {
+.jobs>.jobs-item>.job:hover::after {
 	opacity: .4;
 }
 
-.jobs > .jobs-item > .job:last-child {
+.jobs>.jobs-item>.job:last-child {
 	margin-bottom: 0 !important;
 }
 
 /*--Skills--*/
 
-.skills {
-    position:relative;
-}
-#skills canvas {
-    display: block;
-    top:0;
-    left:0;
-	width: 100%;
-	height: auto;
-}
-#skills span {
-    color:#555;
-    display:flex;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-    text-align:center;
-    font-family:sans-serif;
-    font-size:40px;
-    font-weight:100;
+.skill-text {
+	display: block;
 }
 
-#skills input {
-    width: 200px;
+.progress {
+	width: 150px;
+	height: 150px;
+	background: none;
+	position: relative;
+	float: left;
+}
+
+.progress::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 6px solid #eee;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress>span {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+.progress .progress-left {
+	left: 0;
+}
+
+.progress .progress-bar {
+	width: 100%;
+	height: 100%;
+	background: none;
+	border-width: 6px;
+	border-style: solid;
+	position: absolute;
+	top: 0;
+}
+
+.progress .progress-left .progress-bar {
+	left: 100%;
+	border-top-right-radius: 80px;
+	border-bottom-right-radius: 80px;
+	border-left: 0;
+	-webkit-transform-origin: center left;
+	transform-origin: center left;
+}
+
+.progress .progress-right {
+	right: 0;
+}
+
+.progress .progress-right .progress-bar {
+	left: -100%;
+	border-top-left-radius: 80px;
+	border-bottom-left-radius: 80px;
+	border-right: 0;
+	-webkit-transform-origin: center right;
+	transform-origin: center right;
+}
+
+.progress .progress-value {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress .progress-value .h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 }
 
 
@@ -186,6 +241,7 @@ nav.navbar {
 	.header-content h1 {
 		font-size: 4rem;
 	}
+
 	.header-content h2 {
 		font-size: 1.5rem;
 	}

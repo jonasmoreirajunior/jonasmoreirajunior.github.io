@@ -1,43 +1,32 @@
-var el = document.getElementById('skills'); // get canvas
+$(function () {
 
-var options = {
-    percent:  el.getAttribute('data-percent') || 25,
-    size: el.getAttribute('data-size') || 400,
-    lineWidth: el.getAttribute('data-line') || 25,
-    rotate: el.getAttribute('data-rotate') || 0,
-	skill: el.getAttribute('data-skill')
-}
+	$(".progress").each(function () {
 
-var canvas = document.getElementsByClassName('skill').getElementsByClassName('circle-skill');
-var span = document.createElement('span');
-span.textContent = options.skill;
-    
-if (typeof(G_vmlCanvasManager) !== 'undefined') {
-    G_vmlCanvasManager.initElement(canvas);
-}
+		var value = $(this).attr('data-value');
+		// var valueSkill = $(this).attr('data-skill');
+		var left = $(this).find('.progress-left .progress-bar');
+		var right = $(this).find('.progress-right .progress-bar');
+		// var span = $('.skill-text');
 
-var ctx = canvas.getContext('2d');
-console.log(ctx);
-canvas.width = canvas.height = options.size;
+		if (value > 0) {
+			if (value <= 50) {
+				right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+			} else {
+				right.css('transform', 'rotate(180deg)')
+				left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+			}
+		}
 
-ctx.translate(options.size / 2, options.size / 2); // change center
-ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+	})
 
-//imd = ctx.getImageData(0, 0, 240, 24a0);
-var radius = (options.size - options.lineWidth) / 2;
+	function percentageToDegrees(percentage) {
 
-var drawCircle = function(color, lineWidth, percent) {
-		percent = Math.min(Math.max(0, percent || 1), 1);
-		ctx.beginPath();
-		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
-		ctx.strokeStyle = color;
-        ctx.lineCap = 'round'; // butt, round or square
-		ctx.lineWidth = lineWidth
-		ctx.stroke();
-};
+		return percentage / 100 * 360
 
-drawCircle('#efefef', options.lineWidth, 100 / 100);
-drawCircle('#555555', options.lineWidth, options.percent / 100);
+	}
+
+});
+
 
 // $(document).ready(function(){
 //     $('.nav li').click(function(){
@@ -45,11 +34,11 @@ drawCircle('#555555', options.lineWidth, options.percent / 100);
 
 //         $(this).addClass('active');
 //     });
-	
+
 // 	$('.carousel').carousel({
 // 		interval: 5000,
 // 	});
-	
+
 // 	$(function() {
 // 		$('a.page-scroll').bind('click', function(event) {
 // 			var $anchor = $(this);
