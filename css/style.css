@@ -7,6 +7,10 @@
 	outline: none !important;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 .overlay {
 	display: block;
 	position: absolute;
@@ -97,7 +101,8 @@ nav.navbar {
 /*--Jobs--*/
 
 .jobs h2,
-.skills h2 {
+.skills h2,
+.contact h2 {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 2rem;
@@ -106,7 +111,8 @@ nav.navbar {
 }
 
 .jobs h2::after,
-.skills h2::after {
+.skills h2::after,
+.contact h2::after {
 	content: '';
 	position: absolute;
 	width: 60px;
@@ -235,6 +241,20 @@ nav.navbar {
 	font-weight: 300;
 }
 
+/*--Contact--*/
+
+.list-contact {
+	list-style: none;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+.list-contact a {
+	color: #000;
+	text-decoration: none;
+}
 
 /*--Mobile--*/
 @media screen and (max-width: 576px) {
