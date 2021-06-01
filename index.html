@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jonas Moreira - Desenvolvedor Web</title>
-    <link rel="stylesheet" href="css/scrolling-nav.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://kit.fontawesome.com/d9e093e084.js" crossorigin="anonymous"></script>
@@ -13,9 +12,9 @@
 
   <body>
     <nav class="navbar navbar-expand-sm bg-transparent">
-      <a class="navbar-brand d-block d-sm-none" href="#">Menu</a>
+      <a class="navbar-brand d-block d-sm-none m-0" href="#">Menu</a>
       <button
-        class="navbar-toggler"
+        class="navbar-toggler p-0"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -55,10 +54,23 @@
     <div class="container">
       <div class="row">
         <section class="jobs col-12">
-          <h2 class="mt-5 mb-5">Trabalhos</h2>
+          <h2 class="mt-5 mb-5 pb-3">Trabalhos</h2>
           <div class="jobs-item col-12 d-flex flex-wrap justify-content-sm-between p-0 m-0">
-            <span class="job col-md-5" style="background-image: url('img/live-earth.jpg');"></span>
-            <span class="job col-md-5" style="background-image: url('img/axis-realty.jpg');"></span>
+            <span class="job col-md-5 mb-4" style="background-image: url('img/live-earth.jpg');"></span>
+            <span class="job col-md-5 mb-4" style="background-image: url('img/axis-realty.jpg');"></span>
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="skills col-12">
+          <h2 class="mt-5 mb-5 pb-3">Skills</h2>
+          <div class="skills-item col-12 d-flex flex-wrap justify-content-sm-between p-0 m-0">
+            <div class="col-md-2" id="skills" data-percent="88" data-skill="PHP">
+              <span class="skill">
+                <canvas class="circle-skill"></canvas>
+              </span>
+            </div>
           </div>
         </section>
       </div>

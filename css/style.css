@@ -4,6 +4,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	outline: none !important;
 }
 
 .overlay {
@@ -61,6 +62,7 @@ nav.navbar {
 	background-image: url('../img/bg-header.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 	align-items: center;
 	display: flex;
 	width: 100%;
@@ -94,6 +96,24 @@ nav.navbar {
 
 /*--Jobs--*/
 
+.jobs h2, .skills h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 2rem;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.jobs h2::after, .skills h2::after {
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 1px;
+	background-color: black;
+	bottom: 0;
+	left: 0;
+}
+
 .jobs > .jobs-item > .job {
 	background-position: center;
 	background-size: cover;
@@ -126,4 +146,47 @@ nav.navbar {
 
 .jobs > .jobs-item > .job:hover::after {
 	opacity: .4;
+}
+
+.jobs > .jobs-item > .job:last-child {
+	margin-bottom: 0 !important;
+}
+
+/*--Skills--*/
+
+.skills {
+    position:relative;
+}
+#skills canvas {
+    display: block;
+    top:0;
+    left:0;
+	width: 100%;
+	height: auto;
+}
+#skills span {
+    color:#555;
+    display:flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+    text-align:center;
+    font-family:sans-serif;
+    font-size:40px;
+    font-weight:100;
+}
+
+#skills input {
+    width: 200px;
+}
+
+
+/*--Mobile--*/
+@media screen and (max-width: 576px) {
+	.header-content h1 {
+		font-size: 4rem;
+	}
+	.header-content h2 {
+		font-size: 1.5rem;
+	}
 }
