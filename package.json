@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "bounce.js": "^0.8.2",
-    "wow.js": "^1.2.2"
+    "bounce.js": "^0.8.2"
   }
 }
