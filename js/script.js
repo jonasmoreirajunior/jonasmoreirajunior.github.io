@@ -25,6 +25,10 @@ $(function () {
 
 	}
 
+	$('.nav-link').click(function(){
+		$('.navbar-collapse').removeClass('show');
+	})
+
 });
 
 
