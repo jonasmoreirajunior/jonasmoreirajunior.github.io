@@ -31,7 +31,34 @@ html {
 	animation-play-state: running !important;
 }
 
+/*--Animations--*/
+
+@keyframes typing {
+	from{
+		width: 0;
+		opacity: 1;
+	}
+	to{
+			width: 100%;
+			opacity: 1;
+	}
+}
+
+@keyframes blinkCursor {
+	from{
+		border-right-color: initial;
+	}
+	to{
+		border-right-color: transparent;
+	}
+}
+
+.typing-animation {
+	animation: blinkCursor 500ms steps(40) infinite normal, typing 2s steps(40) .5s normal forwards;
+}
+
 /*--Menu--*/
+
 nav.navbar {
 	position: absolute;
 	z-index: 20;
@@ -70,6 +97,7 @@ nav.navbar {
 
 
 /*--Header--*/
+
 .header-content {
 	background-image: url('../img/bg-header.jpg');
 	background-size: cover;
@@ -99,11 +127,15 @@ nav.navbar {
 }
 
 .header-content h2 {
-	max-width: 820px;
+	border-right: 2px solid rgba(255, 255, 255, .75);
+	max-width: 31em;
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
-	font-size: 3.5rem;
+	font-size: 1.5rem;
+	white-space: nowrap;
+	overflow: hidden;
+	opacity: 0;
 }
 
 /*--Jobs--*/
@@ -278,7 +310,8 @@ nav.navbar {
 	text-decoration: none;
 }
 
-/*--Mobile--*/
+/*--Responsivo--*/
+
 @media screen and (max-width: 576px) {
 	nav.navbar {
 		position: fixed;
@@ -286,11 +319,16 @@ nav.navbar {
 	}
 
 	.header-content h1 {
-		font-size: 4rem;
+		font-size: 8rem;
 	}
 
 	.header-content h2 {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
+		line-height: 1.5;
+		white-space: normal;
+		animation: none;
+		opacity: 1;
+		border-right: none;
 	}
 
 	.skills-list {
