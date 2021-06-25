@@ -1,5 +1,6 @@
 $(function () {
 
+	// Animation Hover Screen
 	var root = document.documentElement;
 	root.className += ' js';
 
@@ -29,17 +30,8 @@ $(function () {
 		setTimeout(function () { animeScroll() }, 100);
 	});
 
+	// Bounce Anumation
 	var bounce = new Bounce();
-
-	bounce
-		.translate({
-			from: { x: -300, y: 0 },
-			to: { x: 0, y: 0 },
-			duration: 1000,
-			stiffness: 4
-		})
-		.applyTo(document.querySelectorAll(".animation-target"));
-
 	bounce
 		.skew({
 			from: { x: 0, y: 0 },
@@ -59,6 +51,7 @@ $(function () {
 		})
 		.applyTo(document.querySelectorAll(".animation-img"));
 
+	// Progerss Circle
 	$(".progress").each(function () {
 
 		var value = $(this).attr('data-value');
@@ -77,38 +70,13 @@ $(function () {
 		}
 
 	})
-
 	function percentageToDegrees(percentage) {
-
 		return percentage / 100 * 360
-
 	}
 
-	$('.nav-link').click(function () {
+	// Menu mobile collapse
+	$('.nav-link').on("click", function () {
 		$('.navbar-collapse').removeClass('show');
 	})
 
 });
-
-
-// $(document).ready(function(){
-//     $('.nav li').click(function(){
-//         $('li.active').removeClass('active');
-
-//         $(this).addClass('active');
-//     });
-
-// 	$('.carousel').carousel({
-// 		interval: 5000,
-// 	});
-
-// 	$(function() {
-// 		$('a.page-scroll').bind('click', function(event) {
-// 			var $anchor = $(this);
-// 			$('html, body').stop().animate({
-// 				scrollTop: $($anchor.attr('href')).offset().top -70
-// 			}, 1500);
-// 			event.preventDefault();
-// 		});
-// 	});	
-// });
