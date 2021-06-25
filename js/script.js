@@ -2,7 +2,7 @@ $(function () {
 
 	// Animation Hover Screen
 	var root = document.documentElement;
-	root.className += ' js';
+	root.className += 'js';
 
 	function boxTop(idBox) {
 		var boxOffset = $(idBox).offset().top;
@@ -24,10 +24,23 @@ $(function () {
 			}
 		});
 	}
-	animeScroll();
 
-	$(document).scroll(function () {
-		setTimeout(function () { animeScroll() }, 100);
+	function menuFixed() {
+		var documentTop = $(document).scrollTop();
+		var navbar = $('.navbar'),
+			fixedClass = 'fixed-menu';
+		if (documentTop > 5) {
+			$(navbar).addClass(fixedClass);
+		} else {
+			$(navbar).removeClass(fixedClass);
+		}
+	}
+
+	$(document).on("scroll", function () {
+		menuFixed();
+		setTimeout(function () {
+			animeScroll();
+		}, 100);
 	});
 
 	// Bounce Anumation
@@ -53,7 +66,6 @@ $(function () {
 
 	// Progerss Circle
 	$(".progress").each(function () {
-
 		var value = $(this).attr('data-value');
 		// var valueSkill = $(this).attr('data-skill');
 		var left = $(this).find('.progress-left .progress-bar');
@@ -68,7 +80,6 @@ $(function () {
 				left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
 			}
 		}
-
 	})
 	function percentageToDegrees(percentage) {
 		return percentage / 100 * 360
@@ -78,5 +89,4 @@ $(function () {
 	$('.nav-link').on("click", function () {
 		$('.navbar-collapse').removeClass('show');
 	})
-
 });

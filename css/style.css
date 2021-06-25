@@ -79,6 +79,11 @@ nav.navbar {
 	width: 100%;
 }
 
+nav.navbar.fixed-menu {
+	position: fixed;
+	background: black !important;
+}
+
 .nav-item {
 	animation-name: topBottom;
 	animation-duration: .2s;
