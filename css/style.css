@@ -99,6 +99,22 @@ nav.navbar {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 1rem;
+	position: relative;
+}
+
+.nav-link::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: white;
+	transition: width .2s ease-in;
+}
+
+.nav-link:hover::before {
+	width: 100%;
 }
 
 .nav-link:hover {
@@ -345,6 +361,10 @@ nav.navbar {
 	nav.navbar {
 		position: fixed;
 		background-color: #000 !important;
+	}
+
+	.nav-link::before {
+		display: none;
 	}
 
 	.header-content h1 {
