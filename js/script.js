@@ -1,6 +1,6 @@
 $(function () {
 
-	// Animation Hover Screen
+	// Animation Scroll
 	var root = document.documentElement;
 	root.className += 'js';
 
@@ -36,14 +36,14 @@ $(function () {
 		}
 	}
 
-	$(document).on("scroll", function () {
+	$(document).on('scroll', function () {
 		menuFixed();
 		setTimeout(function () {
 			animeScroll();
 		}, 100);
 	});
 
-	// Bounce Anumation
+	// Bounce Animation
 	var bounce = new Bounce();
 	bounce
 		.skew({
@@ -62,10 +62,10 @@ $(function () {
 			bounces: 4,
 			stiffness: 2
 		})
-		.applyTo(document.querySelectorAll(".animation-img"));
+		.applyTo(document.querySelectorAll('.animation-img'));
 
 	// Progerss Circle
-	$(".progress").each(function () {
+	$('.progress').each(function () {
 		var value = $(this).attr('data-value');
 		// var valueSkill = $(this).attr('data-skill');
 		var left = $(this).find('.progress-left .progress-bar');
@@ -85,13 +85,13 @@ $(function () {
 		return percentage / 100 * 360
 	}
 
-	// Menu class active
-	$('.nav-link').on("click", function () {
+	// Menu Class Active
+	$('.nav-link').on('click', function () {
 		$(this).parent().addClass('active').siblings().removeClass('active');
 	})
 
-	// Menu mobile collapse
-	$('.nav-link').on("click", function () {
+	// Menu Mobile Collapse
+	$('.nav-link').on('click', function () {
 		$('.navbar-collapse').removeClass('show');
 	})
 });
