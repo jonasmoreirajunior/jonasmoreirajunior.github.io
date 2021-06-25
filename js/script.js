@@ -29,7 +29,7 @@ $(function () {
 		var documentTop = $(document).scrollTop();
 		var navbar = $('.navbar'),
 			fixedClass = 'fixed-menu';
-		if (documentTop > 5) {
+		if (documentTop > 80) {
 			$(navbar).addClass(fixedClass);
 		} else {
 			$(navbar).removeClass(fixedClass);
@@ -84,6 +84,11 @@ $(function () {
 	function percentageToDegrees(percentage) {
 		return percentage / 100 * 360
 	}
+
+	// Menu class active
+	$('.nav-link').on("click", function () {
+		$(this).parent().addClass('active').siblings().removeClass('active');
+	})
 
 	// Menu mobile collapse
 	$('.nav-link').on("click", function () {

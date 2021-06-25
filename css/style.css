@@ -72,16 +72,20 @@ html {
 }
 
 /*--Menu--*/
-
 nav.navbar {
 	position: absolute;
 	z-index: 20;
 	width: 100%;
+	height: 80px;
 }
 
 nav.navbar.fixed-menu {
 	position: fixed;
 	background: black !important;
+	animation-name: topBottom;
+	animation-duration: .4s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
 }
 
 .nav-item {
@@ -105,6 +109,7 @@ nav.navbar.fixed-menu {
 	font-weight: 300;
 	font-size: 1rem;
 	position: relative;
+	line-height: 1;
 }
 
 .nav-link::before {
@@ -124,6 +129,20 @@ nav.navbar.fixed-menu {
 
 .nav-link:hover {
 	color: inherit;
+}
+
+.nav-item.active .nav-link {
+	position: relative;
+}
+
+.nav-item.active .nav-link::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: white;
 }
 
 .navbar-brand {
@@ -366,6 +385,10 @@ nav.navbar.fixed-menu {
 	nav.navbar {
 		position: fixed;
 		background-color: #000 !important;
+	}
+
+	nav.navbar {
+		height: auto;
 	}
 
 	.nav-link::before {
