@@ -31,10 +31,6 @@ html {
 	animation-play-state: running !important;
 }
 
-.modal-dialog {
-	margin: unset;
-}
-
 /*--Animations--*/
 
 @keyframes typing {
@@ -446,5 +442,9 @@ nav.navbar.fixed-menu {
 
 	.skills-list .progress:last-child {
 		margin-bottom: 0 !important;
+	}
+
+	.modal-dialog {
+		margin: unset;
 	}
 }
