@@ -31,6 +31,10 @@ html {
 	animation-play-state: running !important;
 }
 
+.modal-dialog {
+	margin: unset;
+}
+
 /*--Animations--*/
 
 @keyframes typing {
@@ -281,6 +285,29 @@ nav.navbar.fixed-menu {
 .modal-dialog {
 	max-width: 1000px;
 	width: 100%;
+}
+
+.modal-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.modal-footer ul {
+	list-style-type: none;
+}
+
+.modal-footer ul li {
+	position: relative;
+	padding-left: 20px;
+}
+
+.modal-footer ul li::before {
+	content: '\f30b';
+	position: absolute;
+	font-family: 'FontAwesome';
+	left: 0;
+	top: 0;
 }
 
 /*--Skills--*/

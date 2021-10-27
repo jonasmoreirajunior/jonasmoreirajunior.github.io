@@ -26,8 +26,8 @@ $(function () {
 	}
 
 	function menuFixed() {
-		var documentTop = $(document).scrollTop();
-		var navbar = $('.navbar'),
+		var documentTop = $(document).scrollTop(),
+			navbar = $('.navbar'),
 			fixedClass = 'fixed-menu';
 		if (documentTop > 80) {
 			$(navbar).addClass(fixedClass);
