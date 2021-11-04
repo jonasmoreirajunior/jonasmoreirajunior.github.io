@@ -444,6 +444,10 @@ nav.navbar.fixed-menu {
 		margin-bottom: 0 !important;
 	}
 
+	.modal {
+		padding: 0 15px !important;
+	}
+
 	.modal-dialog {
 		margin: unset;
 	}
