@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.overlay {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	opacity: .6;
+	z-index: 1;
+}
+
+.js .anime {
+	animation-play-state: paused !important;
+}
+
+.js .anime-init {
+	animation-play-state: running !important;
+}
+
+/*--Animations--*/
+
+@keyframes typing {
+	from {
+		width: 0;
+		opacity: 1;
+	}
+
+	to {
+		width: 100%;
+		opacity: 1;
+	}
+}
+
+@keyframes blinkCursor {
+	from {
+		border-right-color: initial;
+	}
+
+	to {
+		border-right-color: transparent;
+	}
+}
+
+@keyframes topBottom {
+	from {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.typing-animation {
+	animation: blinkCursor 500ms steps(40) infinite normal, typing 2s steps(40) .5s normal forwards;
+}
+
+/*--Menu--*/
+nav.navbar {
+	position: absolute;
+	z-index: 20;
+	width: 100%;
+	height: 80px;
+}
+
+nav.navbar.fixed-menu {
+	position: fixed;
+	background: black !important;
+	animation-name: topBottom;
+	animation-duration: .4s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
+
+.nav-item {
+	animation-name: topBottom;
+	animation-duration: .2s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: backwards;
+}
+
+.nav-item:nth-child(2) {
+	animation-delay: .2s;
+}
+
+.nav-item:nth-child(3) {
+	animation-delay: .4s;
+}
+
+.nav-link {
+	color: #FFF !important;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	position: relative;
+	line-height: 1;
+}
+
+.nav-link::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: white;
+	transition: width .2s ease-in;
+}
+
+.nav-link:hover::before {
+	width: 100%;
+}
+
+.nav-link:hover {
+	color: inherit;
+}
+
+.nav-item.active .nav-link {
+	position: relative;
+}
+
+.nav-item.active .nav-link::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: white;
+}
+
+.navbar-brand {
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.navbar-brand:hover {
+	color: #FFF;
+}
+
+.navbar-toggler-icon {
+	color: #fff;
+	font-size: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+
+/*--Header--*/
+
+.header-content {
+	background-image: url('../img/bg-header.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	align-items: center;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	position: relative;
+	color: #FFF;
+	justify-content: center;
+	position: relative;
+}
+
+.header-content .container {
+	z-index: 2;
+}
+
+.header-content h1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 8rem;
+}
+
+.header-content h2 {
+	border-right: 2px solid rgba(255, 255, 255, .75);
+	max-width: 31em;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1.5rem;
+	white-space: nowrap;
+	overflow: hidden;
+	opacity: 0;
+}
+
+/*--Jobs--*/
+
+.jobs h2,
+.skills h2,
+.contact h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 2rem;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.jobs h2::after,
+.skills h2::after,
+.contact h2::after {
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 1px;
+	background-color: black;
+	bottom: 0;
+	left: 0;
+}
+
+.jobs>.jobs-item>.job {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: none;
+	display: block;
+	width: 100%;
+	height: 405px;
+	border-radius: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.jobs>.jobs-item>.job::after {
+	content: '\f067';
+	font-family: FontAwesome;
+	font-size: 2rem;
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	border-radius: 10px;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+}
+
+.jobs>.jobs-item>.job:hover::after {
+	opacity: .4;
+}
+
+.jobs>.jobs-item>.job:last-child {
+	margin-bottom: 0 !important;
+}
+
+/*--Modals--*/
+
+.modal-body img {
+	width: 100%;
+	height: auto;
+}
+
+.modal-dialog {
+	max-width: 1000px;
+	width: 100%;
+}
+
+.modal-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.modal-footer ul {
+	list-style-type: none;
+}
+
+.modal-footer ul li {
+	position: relative;
+	padding-left: 20px;
+}
+
+.modal-footer ul li::before {
+	content: '\f30b';
+	position: absolute;
+	font-family: 'FontAwesome';
+	left: 0;
+	top: 0;
+}
+
+/*--Skills--*/
+
+.skill-text {
+	display: block;
+}
+
+.progress {
+	width: 150px;
+	height: 150px;
+	background: none;
+	position: relative;
+	float: left;
+}
+
+.progress::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 6px solid #eee;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress>span {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+.progress .progress-left {
+	left: 0;
+}
+
+.progress .progress-bar {
+	width: 100%;
+	height: 100%;
+	background: none;
+	border-width: 6px;
+	border-style: solid;
+	position: absolute;
+	top: 0;
+}
+
+.progress .progress-left .progress-bar {
+	left: 100%;
+	border-top-right-radius: 80px;
+	border-bottom-right-radius: 80px;
+	border-left: 0;
+	-webkit-transform-origin: center left;
+	transform-origin: center left;
+}
+
+.progress .progress-right {
+	right: 0;
+}
+
+.progress .progress-right .progress-bar {
+	left: -100%;
+	border-top-left-radius: 80px;
+	border-bottom-left-radius: 80px;
+	border-right: 0;
+	-webkit-transform-origin: center right;
+	transform-origin: center right;
+}
+
+.progress .progress-value {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress .progress-value .h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+/*--Contact--*/
+
+.list-contact {
+	list-style: none;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+.list-contact a {
+	color: #000;
+	text-decoration: none;
+}
+
+/*--Responsivo--*/
+
+@media screen and (max-width: 576px) {
+	nav.navbar {
+		position: fixed;
+		background-color: #000 !important;
+	}
+
+	nav.navbar {
+		height: auto;
+	}
+
+	.nav-link::before {
+		display: none;
+	}
+
+	.header-content h1 {
+		font-size: 8rem;
+	}
+
+	.header-content h2 {
+		font-size: 1.8rem;
+		line-height: 1.5;
+		white-space: normal;
+		animation: none;
+		opacity: 1;
+		border-right: none;
+	}
+
+	.skills-list {
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+
+	.skills-list .progress {
+		margin-bottom: 2rem;
+	}
+
+	.skills-list .progress:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	.modal {
+		padding: 0 15px !important;
+	}
+
+	.modal-dialog {
+		margin: unset;
+	}
+}
